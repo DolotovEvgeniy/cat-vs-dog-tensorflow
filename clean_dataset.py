@@ -1,7 +1,6 @@
 import os
-from PIL import Image
-import cv2
 import tensorflow as tf
+
 def clean_dir(dir_path):
     print('Clean directory: ' + dir_path)
     count = 0
