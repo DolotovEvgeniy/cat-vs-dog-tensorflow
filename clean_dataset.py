@@ -6,8 +6,6 @@ def clean_dir(dir_path):
     count = 0
     for name in os.listdir(dir_path):
         path = os.path.join(dir_path, name)
-        print(path)
-        image = cv2.imread(path)
 
         if tf.compat.as_bytes("JFIF") not in open(path, 'rb').peek(10):
             os.remove(path)
