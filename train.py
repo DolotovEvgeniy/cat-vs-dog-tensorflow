@@ -8,9 +8,9 @@ def get_model(l2_factor):
     model = AlexNet(l2_factor=l2_factor)
 
     lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(
-        initial_learning_rate=1e-2,
+        initial_learning_rate=1e-4,
         decay_steps=500,
-        decay_rate=0.9)
+        decay_rate=0.5)
 
     model.compile(loss=tf.keras.losses.categorical_crossentropy,
                   optimizer=tf.keras.optimizers.Adam(learning_rate=lr_schedule),
