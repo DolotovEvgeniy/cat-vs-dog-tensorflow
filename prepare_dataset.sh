@@ -7,4 +7,4 @@ rm -r kagglecatsanddogs_3367a.zip data-tmp
 
 python clean_dataset.py
 
-python train_test_split.py
+python train_test_valid_split.py
