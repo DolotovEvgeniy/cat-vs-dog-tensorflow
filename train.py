@@ -4,8 +4,8 @@ from prepare_data import get_datasets
 
 BATCH_SIZE = 256
 
-def get_model():
-    model = AlexNet()
+def get_model(l2_factor):
+    model = AlexNet(l2_factor=l2_factor)
 
     model.compile(loss=tf.keras.losses.categorical_crossentropy,
                   optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
@@ -27,7 +27,7 @@ if __name__ == '__main__':
     tensorboard = tf.keras.callbacks.TensorBoard(log_dir='log')
     callback_list = [tensorboard]
 
-    model = get_model()
+    model = get_model(l2_factor=0.0001)
     model.summary()
 
     # start training
