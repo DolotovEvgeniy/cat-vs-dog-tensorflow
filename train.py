@@ -8,7 +8,7 @@ def get_model(l2_factor):
     model = AlexNet(l2_factor=l2_factor)
 
     model.compile(loss=tf.keras.losses.categorical_crossentropy,
-                  optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
+                  optimizer=tf.keras.optimizers.Adam(learning_rate=0.0001),
                   metrics=['accuracy'])
     return model
 
@@ -32,7 +32,7 @@ if __name__ == '__main__':
 
     # start training
     model.fit_generator(train_generator,
-                        epochs=30,
+                        epochs=100,
                         steps_per_epoch=train_num // BATCH_SIZE,
                         validation_data=valid_generator,
                         validation_steps=valid_num // 10,
