@@ -16,7 +16,7 @@ def get_datasets():
                                                         batch_size=256,
                                                         seed=1,
                                                         shuffle=True,
-                                                        class_mode="categorical")
+                                                        class_mode="categorical").prefetch(5)
 
     valid_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
         rescale=1.0 /255.0
