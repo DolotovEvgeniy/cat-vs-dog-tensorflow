@@ -2,7 +2,7 @@ import tensorflow as tf
 from models.alexnet import AlexNet
 from prepare_data import get_datasets
 
-BATCH_SIZE = 16
+BATCH_SIZE = 64
 
 def get_model():
     model = AlexNet()
