@@ -2,7 +2,7 @@ import tensorflow as tf
 from models.alexnet import AlexNet
 from prepare_data import get_datasets
 
-BATCH_SIZE = 64
+BATCH_SIZE = 256
 
 def get_model():
     model = AlexNet()
@@ -32,10 +32,10 @@ if __name__ == '__main__':
 
     # start training
     model.fit_generator(train_generator,
-                        epochs=10,
+                        epochs=30,
                         steps_per_epoch=train_num // BATCH_SIZE,
                         validation_data=valid_generator,
-                        validation_steps=valid_num // BATCH_SIZE,
+                        validation_steps=valid_num // 10,
                         callbacks=callback_list)
 
     # save the whole model
