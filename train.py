@@ -33,7 +33,7 @@ if __name__ == '__main__':
     tensorboard = tf.keras.callbacks.TensorBoard(log_dir='log')
     callback_list = [tensorboard]
 
-    model = get_model(l2_factor=0)
+    model = get_model(l2_factor=0.00001)
     model.summary()
 
     # start training
