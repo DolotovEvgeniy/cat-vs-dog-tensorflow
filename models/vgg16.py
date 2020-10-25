@@ -19,6 +19,7 @@ def VGG16(l2_factor):
     model.add(tf.keras.layers.MaxPool2D(pool_size=(2, 2),
                                         strides=2,
                                         padding='same'))
+    model.add(tf.keras.layers.BatchNormalization())
 
     # 2
     model.add(tf.keras.layers.Conv2D(filters=128,
@@ -36,6 +37,7 @@ def VGG16(l2_factor):
     model.add(tf.keras.layers.MaxPool2D(pool_size=(2, 2),
                                         strides=2,
                                         padding='same'))
+    model.add(tf.keras.layers.BatchNormalization())
 
     # 3
     model.add(tf.keras.layers.Conv2D(filters=256,
@@ -59,6 +61,7 @@ def VGG16(l2_factor):
     model.add(tf.keras.layers.MaxPool2D(pool_size=(2, 2),
                                         strides=2,
                                         padding='same'))
+    model.add(tf.keras.layers.BatchNormalization())
 
     # 4
     model.add(tf.keras.layers.Conv2D(filters=512,
@@ -82,6 +85,7 @@ def VGG16(l2_factor):
     model.add(tf.keras.layers.MaxPool2D(pool_size=(2, 2),
                                         strides=2,
                                         padding='same'))
+    model.add(tf.keras.layers.BatchNormalization())
 
     # 5
     model.add(tf.keras.layers.Conv2D(filters=512,
@@ -105,6 +109,7 @@ def VGG16(l2_factor):
     model.add(tf.keras.layers.MaxPool2D(pool_size=(2, 2),
                                         strides=2,
                                         padding='same'))
+    model.add(tf.keras.layers.BatchNormalization())
 
     model.add(tf.keras.layers.Flatten())
     model.add(tf.keras.layers.Dense(units=4096,
