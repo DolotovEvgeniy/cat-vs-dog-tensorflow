@@ -10,6 +10,7 @@ def VGG16(l2_factor):
                                      kernel_regularizer=tf.keras.regularizers.l2(l2_factor),
                                      activation=tf.keras.activations.relu,
                                      input_shape=(224, 224, 3)))
+    model.add(tf.keras.layers.BatchNormalization())
     model.add(tf.keras.layers.Conv2D(filters=64,
                                      kernel_size=(3, 3),
                                      strides=1,
@@ -28,6 +29,7 @@ def VGG16(l2_factor):
                                      padding='same',
                                      kernel_regularizer=tf.keras.regularizers.l2(l2_factor),
                                      activation=tf.keras.activations.relu))
+    model.add(tf.keras.layers.BatchNormalization())
     model.add(tf.keras.layers.Conv2D(filters=128,
                                      kernel_size=(3, 3),
                                      strides=1,
@@ -46,12 +48,14 @@ def VGG16(l2_factor):
                                      padding='same',
                                      kernel_regularizer=tf.keras.regularizers.l2(l2_factor),
                                      activation=tf.keras.activations.relu))
+    model.add(tf.keras.layers.BatchNormalization())
     model.add(tf.keras.layers.Conv2D(filters=256,
                                      kernel_size=(3, 3),
                                      strides=1,
                                      padding='same',
                                      kernel_regularizer=tf.keras.regularizers.l2(l2_factor),
                                      activation=tf.keras.activations.relu))
+    model.add(tf.keras.layers.BatchNormalization())
     model.add(tf.keras.layers.Conv2D(filters=256,
                                      kernel_size=(3, 3),
                                      strides=1,
@@ -70,12 +74,14 @@ def VGG16(l2_factor):
                                      padding='same',
                                      kernel_regularizer=tf.keras.regularizers.l2(l2_factor),
                                      activation=tf.keras.activations.relu))
+    model.add(tf.keras.layers.BatchNormalization())
     model.add(tf.keras.layers.Conv2D(filters=512,
                                      kernel_size=(3, 3),
                                      strides=1,
                                      padding='same',
                                      kernel_regularizer=tf.keras.regularizers.l2(l2_factor),
                                      activation=tf.keras.activations.relu))
+    model.add(tf.keras.layers.BatchNormalization())
     model.add(tf.keras.layers.Conv2D(filters=512,
                                      kernel_size=(3, 3),
                                      strides=1,
@@ -94,12 +100,14 @@ def VGG16(l2_factor):
                                      padding='same',
                                      kernel_regularizer=tf.keras.regularizers.l2(l2_factor),
                                      activation=tf.keras.activations.relu))
+    model.add(tf.keras.layers.BatchNormalization())
     model.add(tf.keras.layers.Conv2D(filters=512,
                                      kernel_size=(3, 3),
                                      strides=1,
                                      padding='same',
                                      kernel_regularizer=tf.keras.regularizers.l2(l2_factor),
                                      activation=tf.keras.activations.relu))
+    model.add(tf.keras.layers.BatchNormalization())
     model.add(tf.keras.layers.Conv2D(filters=512,
                                      kernel_size=(3, 3),
                                      strides=1,
