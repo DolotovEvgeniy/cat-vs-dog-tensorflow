@@ -4,9 +4,9 @@ def get_datasets():
     # Preprocess the dataset
     train_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
         rescale=1./255,
-        rotation_range=20,
-        shear_range=0.2,
-        zoom_range=0.2,
+        #rotation_range=20,
+        #shear_range=0.2,
+        #zoom_range=0.2,
         horizontal_flip=True
     )
 
