@@ -9,7 +9,7 @@ def get_model(l2_factor):
     #model = AlexNet(l2_factor=l2_factor)
     model = VGG16(l2_factor=l2_factor)
     lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(
-        initial_learning_rate=1e-5,
+        initial_learning_rate=1e-3,
         decay_steps=10000,
         decay_rate=0.3)
 
