@@ -37,6 +37,7 @@ def AlexNet(l2_factor):
                                padding="same",
                                kernel_regularizer=tf.keras.regularizers.l2(l2_factor),
                                activation=tf.keras.activations.relu),
+        tf.keras.layers.BatchNormalization(),
         # layer 4
         tf.keras.layers.Conv2D(filters=384,
                                kernel_size=(3, 3),
@@ -44,6 +45,7 @@ def AlexNet(l2_factor):
                                padding="same",
                                kernel_regularizer=tf.keras.regularizers.l2(l2_factor),
                                activation=tf.keras.activations.relu),
+        tf.keras.layers.BatchNormalization(),
         # layer 5
         tf.keras.layers.Conv2D(filters=256,
                                kernel_size=(3, 3),

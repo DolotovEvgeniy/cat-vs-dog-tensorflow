@@ -6,8 +6,8 @@ from prepare_data import get_datasets
 BATCH_SIZE = 32
 
 def get_model(l2_factor):
-    #model = AlexNet(l2_factor=l2_factor)
-    model = VGG16(l2_factor=l2_factor)
+    model = AlexNet(l2_factor=l2_factor)
+    #model = VGG16(l2_factor=l2_factor)
     lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(
         initial_learning_rate=1e-4,
         decay_steps=10000,
@@ -45,4 +45,4 @@ if __name__ == '__main__':
                         callbacks=callback_list)
 
     # save the whole model
-    model.save(model_dir)
+    model.save('model.h5')
