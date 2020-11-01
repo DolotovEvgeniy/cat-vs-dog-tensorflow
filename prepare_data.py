@@ -4,10 +4,10 @@ def get_datasets():
     # Preprocess the dataset
     train_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
         rescale=1./255,
-        rotation_range=20,
-        shear_range=0.2,
-        zoom_range=0.2,
-        horizontal_flip=True
+        #rotation_range=20,
+        #shear_range=0.2,
+        #zoom_range=0.2,
+        #horizontal_flip=True
     )
 
     train_generator = train_datagen.flow_from_directory('cat-vs-dog/train',
