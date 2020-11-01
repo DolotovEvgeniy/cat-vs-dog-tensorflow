@@ -37,12 +37,12 @@ if __name__ == '__main__':
     model.summary()
 
     # start training
-    model.fit_generator(train_generator,
-                        epochs=100,
-                        steps_per_epoch=train_num // BATCH_SIZE,
-                        validation_data=valid_generator,
-                        validation_steps=valid_num // 10,
-                        callbacks=callback_list)
+    model.fit(x=train_generator,
+              epochs=100,
+              steps_per_epoch=train_num // BATCH_SIZE,
+              validation_data=valid_generator,
+              validation_steps=valid_num // 10,
+              callbacks=callback_list)
 
     # save the whole model
     model.save('model.h5')
