@@ -42,7 +42,9 @@ if __name__ == '__main__':
               steps_per_epoch=train_num // BATCH_SIZE,
               validation_data=valid_generator,
               validation_steps=valid_num // 10,
-              callbacks=callback_list)
+              callbacks=callback_list,
+              workers=4,
+              use_multiprocessing=True)
 
     # save the whole model
     model.save('model.h5')
