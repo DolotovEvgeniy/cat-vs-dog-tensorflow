@@ -11,7 +11,7 @@ def get_datasets():
     )
 
     train_generator = train_datagen.flow_from_directory('cat-vs-dog/train',
-                                                        target_size=(64, 64),
+                                                        target_size=(224, 224),
                                                         color_mode="rgb",
                                                         batch_size=32,
                                                         seed=1,
@@ -22,7 +22,7 @@ def get_datasets():
         rescale=1.0 /255.0
     )
     valid_generator = valid_datagen.flow_from_directory('cat-vs-dog/valid',
-                                                        target_size=(64, 64),
+                                                        target_size=(224, 224),
                                                         color_mode="rgb",
                                                         batch_size=10,
                                                         seed=7,
@@ -33,7 +33,7 @@ def get_datasets():
         rescale=1.0 /255.0
     )
     test_generator = test_datagen.flow_from_directory('cat-vs-dog/test',
-                                                      target_size=(64, 64),
+                                                      target_size=(224, 224),
                                                       color_mode="rgb",
                                                       batch_size=10,
                                                       seed=7,
